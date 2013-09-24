@@ -43,6 +43,16 @@
         [rootLayer addSublayer:rectangleLayer];
         [rootLayer addSublayer:textLayer];
         [rootLayer addSublayer:messageRectangleLayer];
+        
+        if ([textLayer respondsToSelector:@selector(setContentsScale:)])
+        {
+            rootLayer.contentsScale = 2;
+            textLayer.contentsScale = 2;
+            rectangleLayer.contentsScale = 2;
+            messageRectangleLayer.contentsScale = 2;
+            messageAlbumLayer.contentsScale = 2;
+            messageTextLayer.contentsScale =2;
+        }
 
         [messageRectangleLayer addSublayer:messageAlbumLayer];
         [messageRectangleLayer addSublayer:messageTextLayer];
